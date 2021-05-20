@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,300&display=swap"
+        rel="stylesheet">
+    <!--embedding style for ease of implementation..yeah.. one-page proj-->
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            scrollbar-width: 0;
+        }
+
+        /*imagine being able to hide the scrollbar.. */
+
+        body::-webkit-scrollbar {
+            width: 0 !important;
+            display: none;
+        }
+
+        h1,
+        p {
+            color: white;
+        }
+/*If need to manually hide display of IDs
+#cap1,
+        #cap2,
+        #cap3,
+        #cap4,
+        #cap5 {
+            display: none;
+        }
+*/
+        .imgcap {
+            display: none;
+        }
+
+        figure {
+            display: flex;
+            align-items: center;
+        }
+
+        figcaption {
+            padding-left: 1em;
+        }
+
+        figure img,
+        svg {
+            max-width: 65%;
+        }
+
+        figure img {
+            display: block;
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        polygon {
+            opacity: 0;
+            fill: black;
+        }
+
+        polygon:hover {
+            opacity: 0.3;
+            fill: url(#transGradient);
+        }
+
+        .img-overlay-wrap {
+            position: relative;
+            display: inline-block;
+            margin: auto;
+            width: 80%;
+            padding-left: 0.2em;
+        }
+
+        /*modal stuff here*/
+        .imgindex {
+            display: inline-block;
+            margin-left: 40px;
+        }
+
+        .imgindex img {
+            max-width: 200px;
+            max-height: 200px;
+            width: calc(95% - 0.5em);
+            margin: 0 2.5%;
+        }
+
+        .modal {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            overflow: auto;
+        }
+
+        .theSlides {
+            display: none;
+        }
+
+        .closeclick {
+            color: white;
+            position: absolute;
+            right: 30px;
+            font-size: 35px;
+            font-weight: bold;
+            top: 10px;
+        }
+
+        a {
+            color: rgb(178, 186, 230);
+            text-decoration: none;
+        }
+    </style>
+
+<body>
+    <svg height="0" width="0">
+        <defs>
+            <radialGradient id="transGradient" cx="50%" cy="50%" r="50%">
+
+                <stop offset="40%" style="stop-color:rgb(0,255,241);stop-opacity:0.16" />
+                <stop offset="100%" style="stop-color:rgb(7,58,187);stop-opacity:0.00" />
+
+            </radialGradient>
+        </defs>
+    </svg>
+    <!--gallery attempt goes here-->
+    <figure class="imgindex">
+        <img src="images/jpndivers.jpg" onclick="openModal();currentSlide(1)">
+    </figure>
+    <figure class="imgindex">
+        <img src="images/boothelmet.jpg" onclick="openModal();currentSlide(2)">
+    </figure>
+    <figure class="imgindex">
+        <img src="images/boatdiver.jpg" onclick="openModal();currentSlide(3)">
+    </figure>
+    <figure class="imgindex">
+        <img src="images/jpndivers.jpg" onclick="openModal();currentSlide(4)">
+    </figure>
+    <figure class="imgindex">
+        <img src="images/jpndivers.jpg" onclick="openModal();currentSlide(5)">
+    </figure>
+    <!--gallery end-->
+    <!--lightbox attempt-->
+    <div id="theModal" class="modal">
+        <span class="closeclick" onclick="closeModal()">&times;</span>
+        <div class="img-overlay-wrap">
+            <figure class="theSlides">
+                <img src="images/jpndivers.jpg">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewbox="0 0 1400 1096" preserveAspectRatio="xMidYMid meet">
+                    <a xlink:href="javascript:void(0)">
+                        <polygon id="svg1"
+                            points="660,452 700,562 686,630 668,672 684,676 734,650 748,632 744,540 784,524 808,544 808,654 848,674 860,644 870,444 858,374 806,354 848,322 852,292 832,270 824,244 752,234 730,274 704,282 704,324 732,338 724,352 662,380 660,452" />
+                    </a>
+                    <a xlink:href="javascript:void(0)">
+                        <polygon id="svg2"
+                            points="862,672 880,634 896,590 948,552 1014,544 1022,548 1054,516 1092,516 1106,534 1114,548 1096,584 1128,598 1166,650 1166,668 1160,696 1128,740 1140,794 1118,882 1118,946 1126,980 1070,996 1032,980 1048,846 1036,814 1018,892 936,956 938,854 888,842 886,772 862,672" />
+                    </a>
+                    <!--the crewdiver SVGs-->
+                    <a xlink:href="javascript:void(0)">
+                        <polygon id="svg2aa"
+                            points="1108,508 1102,452 1154,412 1152,308 1296,250 1362,300 1346,388 1400,406 1394,1008 1152,980 1142,816 1188,652 1108,508" />
+                        </a>
+                    <a xlink:href="javascript:void(0)">
+                        <polygon id="svg2ab"
+                            points="896,562 864,536 914,470 930,460 944,380 990,384 1012,418 1004,460 1054,502 896,562" />
+                        </a>
+                    <a xlink:href="javascript:void(0)">
+                        <polygon id="svg2ac"
+                            points="196,592 136,522 192,402 270,378 272,280 328,252 372,276 390,348 358,398 430,420 430,476 490,382 536,276 628,252 652,292 656,338 618,384 652,400 670,522 688,596 648,664 668,716 742,668 768,580 770,542 798,556 806,640 848,686 868,736 880,836 900,854 932,876 934,1020 194,1012 196,592" />
+                        </a>
+                </svg>
+                <figcaption>
+                    <p id="cap1" class="imgcap">This is Victor Kepert - he owned several pearling luggers like this one.
+                        How was he able to
+                        afford them?
+                        <br>
+                        Learn more about Kepert with the <a target="_blank"
+                            href="https://www.museumofperth.com.au/private-victor-ralph-kepert">Museum of Perth</a> or
+                        the <a target="_blank" href="https://vwma.org.au/explore/people/277401">Virtual War Museum.</a>
+                    </p>
+                    <p id="cap2" class="imgcap">This is one of the crew members. What is he wearing?
+                        <br>
+                        <img src="images/boothelmet.jpg" onclick="openModal();currentSlide(2)" width="100">
+                    </p>
+                    <p id="cap2a" class="imgcap">
+                        Some of the most successful divers in the Australian pearling industry were Japanese. Many of them came from Wakayama prefecture, an agriculturally poor coastal area south of Osaka.
+                    </p>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="img-overlay-wrap">
+            <figure class="theSlides">
+                <img src="images/boothelmet.jpg">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewbox=" 0 0 999 699">
+                    <a xlink:href="javascript:void(0)">
+                        <polygon id="svg3"
+                            points="529,243 525,207 537,207 568,127 628,83 702,71 789,131 813,163 813,230 805,260 819,317 781,475 702,484 618,471 559,424 541,320 552,277 529,243" />
+                        </a>
+                    <a xlink:href="javascript:void(0)">
+                        <polygon id="svg4"
+                            points="313,274 343,264 382,264 404,280 404,305 428,291 428,261 487,245 524,263 528,277 531,304 538,340 547,415 535,494 475,507 425,495 394,511 360,522 298,528 294,500 293,438 271,420 313,274" />
+                        </a>
+                </svg>
+                <figcaption>
+                    <p id="cap3" class="imgcap">
+                        <!--helmet-->
+                        Pearl divers would use German-designed equipment, like this helmet and the boots beside it. How
+                        are they different to modern-day diving helmets?
+                        <br>
+                        <img src="images/boatdiver.jpg" onclick="openModal();currentSlide(3)" width="50">
+                    </p>
+                    <p id="cap4" class="imgcap">
+                        Divers would wear boots weighing up to 7 kilograms. Get a closer look at these boots through the
+                        <a target="_blank"
+                            href="http://collections.anmm.gov.au/objects/44596/right-boot-from-diving-suit?ctx=414237de-ca51-45f0-8e11-43aa6db6d3a1&idx=36">ANMM's
+                            collection!</a>
+                    </p>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="img-overlay-wrap">
+            <figure class="theSlides">
+                <img src="images/boatdiver.jpg">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewbox="0 0 1000 885">
+                    <a xlink:href="javascript:void(0)">
+                        <polygon id="svg5"
+                            points="218,292 260,244 325,233 395,258 421,327 440,341 445,365 466,399 549,446 595,501 595,544 614,582 590,596 509,598 496,520 456,488 459,545 273,628 131,630 134,515 230,411 179,359 218,292" />
+                        </a>
+                </svg>
+                <figcaption>
+                    <p id="cap5" class="imgcap">
+                        placeholder!!!!
+                    </p>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+        /* Yes, this is super inefficient.
+        Each svg has a unique id which activates a unique click function. 
+        Perhaps possible to do in a loop activating on general svg clicks + checking the id with an incrementing variable? 
+        In the case of multiple polygons having the same caption....still have to give each one a unique id.
+        sigh
+        */
+
+        
+        $('#svg1').click(function () {
+            if ($('#cap1').css('display') == 'block') {
+                $('#cap1').css('display', 'none');
+            } else {
+                $('#cap1').css('display', 'block');
+            }
+        });
+        $('#svg2').click(function () {
+            if ($('#cap2').css('display') == 'block') {
+                $('#cap2').css('display', 'none');
+            } else {
+                $('#cap2').css('display', 'block');
+            }
+        });
+        /*Crewdivers*/
+        $('#svg2aa').click(function () {
+            if ($('#cap2a').css('display') == 'block') {
+                $('#cap2a').css('display', 'none');
+            } else {
+                $('#cap2a').css('display', 'block');
+            }
+        });
+        $('#svg2ab').click(function () {
+            if ($('#cap2a').css('display') == 'block') {
+                $('#cap2a').css('display', 'none');
+            } else {
+                $('#cap2a').css('display', 'block');
+            }
+        });
+        $('#svg2ac').click(function () {
+            if ($('#cap2a').css('display') == 'block') {
+                $('#cap2a').css('display', 'none');
+            } else {
+                $('#cap2a').css('display', 'block');
+            }
+        });
+        /*End crewdivers, next img*/
+        $('#svg3').click(function () {
+            if ($('#cap3').css('display') == 'block') {
+                $('#cap3').css('display', 'none');
+            } else {
+                $('#cap3').css('display', 'block');
+            }
+        });
+        $('#svg4').click(function () {
+            if ($('#cap4').css('display') == 'block') {
+                $('#cap4').css('display', 'none');
+            } else {
+                $('#cap4').css('display', 'block');
+            }
+        });
+        $('#svg5').click(function () {
+            if ($('#cap5').css('display') == 'block') {
+                $('#cap5').css('display', 'none');
+            } else {
+                $('#cap5').css('display', 'block');
+            }
+        });
+    </script>
+    <script>
+        /*Javascript here because my brain isn't prepared to convert it to jquery.
+        opens/closes the lightbox/modal.
+        */
+        function openModal() {
+            document.getElementById("theModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("theModal").style.display = "none";
+
+        }
+        /*Displays the image/div for current slide of modal. 
+        Current issue: keeps the captions displayed as there is no function setting display to none when transitioning between slides.
+        The commented out line does not work -> gives undefined?? T_T 
+        */
+        function currentSlide(n) {
+            var i;
+            var slides = document.getElementsByClassName("theSlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            /*document.getElementsByClassName("imgcap").style.display = "none";*/
+            slides[n - 1].style.display = "flex";
+        }
+    </script>
+</body>
