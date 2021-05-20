@@ -144,8 +144,9 @@
     <figure class="imgindex">
         <img src="images/boatdiver.jpg" onclick="openModal();currentSlide(3)">
     </figure>
+    <!--currentSlide(4) goes to pearllugger, lets not display it on the main screen...!-->
     <figure class="imgindex">
-        <img src="images/jpndivers.jpg" onclick="openModal();currentSlide(4)">
+        <img src="images/slqdivers.jpeg" onclick="openModal();currentSlide(5)">
     </figure>
     <figure class="imgindex">
         <img src="images/jpndivers.jpg" onclick="openModal();currentSlide(5)">
@@ -156,6 +157,7 @@
         <span class="closeclick" onclick="closeModal()">&times;</span>
         <div class="img-overlay-wrap">
             <figure class="theSlides">
+                <!--crrentSlide1-->
                 <img src="images/jpndivers.jpg">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                     viewbox="0 0 1400 1096" preserveAspectRatio="xMidYMid meet">
@@ -202,6 +204,7 @@
         </div>
         <div class="img-overlay-wrap">
             <figure class="theSlides">
+                <!--currentSlide2-->
                 <img src="images/boothelmet.jpg">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                     viewbox=" 0 0 999 699">
@@ -233,6 +236,7 @@
         </div>
         <div class="img-overlay-wrap">
             <figure class="theSlides">
+                <!--currentSlide3-->
                 <img src="images/boatdiver.jpg">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                     viewbox="0 0 1000 885">
@@ -250,10 +254,36 @@
         </div>
         <div class="img-overlay-wrap">
             <figure class="theSlides">
+                <!--currentSlide4, not shown publicly-->
                 <img src="images/pearllugger.jpg">
                 <figcaption style="display: block; color: white;">
-                    Pearl luggers like this model.... placeholder!
+                    <p  id="cap6" class="imgcap"></p>
+                    <p>
+                    This diver is adjusting the valve of his helmet. What does the valve control? Why is this important to do?
+                    </p>
                 </figcaption>
+            </figure>
+            </div>
+<div class="img-overlay-wrap">
+    <figure class="theSlides">
+        <!--currentSLide5-->
+        <img src="images/slqdivers.jpeg" style="max-height: 80%;">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="max-height: 80%" viewbox="0 0 755 1024">
+            <a xlink:href="javascript:void(0)"><polygon id="svg6" points="46,375 85,351 98,268 148,256 185,264 199,221 223,218 223,153 251,114 303,114 325,146 325,231 369,144 434,151 445,168 480,140 480,77 530,54 576,83 576,138 640,277 696,280 703,367 742,387 742,491 716,511 723,675 749,744 708,860 672,865 681,919 633,987 552,1024 349,987 349,847 199,668 192,945 120,948 74,948 24,967 46,375" /></a>
+        </svg>
+        <figcaption>
+            <p id="cap7" class="imgcap">
+                These men were all Torres Strait pearl divers. 
+                <br>The Australian pearling industry started in the Torres Strait, where the waters were shallow enough to allow divers to dive by holding their breath.
+                <br> As divers had to go deeper for pearl shells, they needed to wear breathing equipment that Aboriginal and Torres Strait islander divers often disliked.
+                <img src="images/boothelmet.jpg" onclick="openModal();currentSlide(2)" width="100">
+                <img src="images/boatdiver.jpg" onclick="openModal();currentSlide(3)" width="100">
+            </p>
+            
+        </figcaption>
+    </figure>
+</div>
+            <!--end of modal wrap-->
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script>
@@ -321,6 +351,13 @@
                 $('#cap5').css('display', 'none');
             } else {
                 $('#cap5').css('display', 'block');
+            }
+        });
+        $('#svg6').click(function () {
+            if ($('#cap7').css('display') == 'block') {
+                $('#cap7').css('display', 'none');
+            } else {
+                $('#cap7').css('display', 'block');
             }
         });
     </script>
