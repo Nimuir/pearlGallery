@@ -37,6 +37,7 @@
             max-width: 200px;
             max-height: 200px;
             padding-left: 10px;
+            
         }
         .imgcap, #explain_valve {
             display: none;
@@ -94,6 +95,8 @@
             max-height: 200px;
             width: calc(95% - 0.5em);
             margin: 0 2.5%;
+            object-fit: scale-down; /* Do not scale the image */
+            object-position: center;
         }
 
         .modal {
@@ -311,7 +314,11 @@
         sigh
         */
 
-        
+        $('.captionthumb, .imgcap').click(function() {
+            for (i = 1; i < 8; i++) {
+                $('#cap' + i).css('display', 'none');
+            }
+        });
         $('#svg1').click(function () {
             if ($('#cap1').css('display') == 'block') {
                 $('#cap1').css('display', 'none');
