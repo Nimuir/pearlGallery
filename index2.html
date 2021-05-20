@@ -32,8 +32,13 @@
         #cap5 {
             display: none;
         }
-*/
-        .imgcap, .explain_valve {
+*/      
+        .captionthumb {
+            max-width: 200px;
+            max-height: 200px;
+            padding-left: 10px;
+        }
+        .imgcap, #explain_valve {
             display: none;
         }
 
@@ -193,12 +198,12 @@
                     </p>
                     <p id="cap2" class="imgcap">This is one of the crew members. What is he wearing?
                         <br><br>
-                        <img src="images/boothelmet.jpg" onclick="openModal();currentSlide(2)" width="100">
+                        <img class="captionthumb" src="images/boothelmet.jpg" onclick="openModal();currentSlide(2)">
                     </p>
                     <p id="cap2a" class="imgcap">
                         Some of the most successful divers in the Australian pearling industry were Japanese. Many of them came from Wakayama prefecture, an agriculturally poor coastal area south of Osaka.
                     <br><br>
-                    <img src="images/slqdivers.jpeg" onclick="openModal();currentSlide(5)" width="100">
+                    <img class="captionthumb" src="images/slqdivers.jpeg" onclick="openModal();currentSlide(5)">
                     </p>
                 </figcaption>
             </figure>
@@ -224,7 +229,7 @@
                         Pearl divers would use German-designed equipment, like this helmet and the boots beside it. How
                         are they different to modern-day diving helmets?
                         <br><br>
-                        <img src="images/boatdiver.jpg" onclick="openModal();currentSlide(3)" width="50">
+                        <img class="captionthumb" src="images/boatdiver.jpg" onclick="openModal();currentSlide(3)">
                     </p>
                     <p id="cap4" class="imgcap">
                         Divers would wear boots weighing up to 7 kilograms. Get a closer look at these boots through the
@@ -245,15 +250,18 @@
                         <polygon id="svg5"
                             points="218,292 260,244 325,233 395,258 421,327 440,341 445,365 466,399 549,446 595,501 595,544 614,582 590,596 509,598 496,520 456,488 459,545 273,628 131,630 134,515 230,411 179,359 218,292" />
                         </a>
+                        <a xlink:href="javascript:void(0)"><polygon id="svg5a" points="844,80 816,159 844,188 753,277 753,324 791,354 659,568 651,713 820,705 936,424 934,70 844,80" /></a>
                 </svg>
                 <figcaption>
                     <p id="cap5" class="imgcap">
-                        This diver is adjusting the valve of his helmet. What does the valve control? Why is this important to do before diving?
-                        <br>
-                        <a href="javascript:void(0)" onclick="toggle_vis('explain_valve');">?</a>
+                        This diver is adjusting the valve of his helmet. What does the valve control? Why is this important to do before diving<a href="javascript:void(0)" onclick="toggle_vis('explain_valve');">?</a>
+                       <br><br>
                         <div id="explain_valve">
-                            Valves are used to control the flow of oxygen...
+                           These valves are used to control the flow of air, matching it to the pressure of the water around the diver. As the diver goes deeper underwater, the pressure increases, and more air is needed to match the water pressure. 
                         </div>
+                    </p>
+                    <p id="cap5a" class="imgcap">
+                        test
                     </p>
                 </figcaption>
             </figure>
@@ -275,7 +283,7 @@
 <div class="img-overlay-wrap">
     <figure class="theSlides">
         <!--currentSLide5-->
-        <img src="images/slqdivers.jpeg" style="max-height: 80vh;">
+        <img src="images/slqdivers.jpeg" style="max-height: 70%;">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="max-height: 80%" viewbox="0 0 755 1024">
             <a xlink:href="javascript:void(0)"><polygon id="svg6" points="46,375 85,351 98,268 148,256 185,264 199,221 223,218 223,153 251,114 303,114 325,146 325,231 369,144 434,151 445,168 480,140 480,77 530,54 576,83 576,138 640,277 696,280 703,367 742,387 742,491 716,511 723,675 749,744 708,860 672,865 681,919 633,987 552,1024 349,987 349,847 199,668 192,945 120,948 74,948 24,967 46,375" /></a>
         </svg>
@@ -285,8 +293,8 @@
                 <br>The Australian pearling industry started in the Torres Strait, where the waters were shallow enough to allow divers to dive by holding their breath.
                 <br> As divers had to go deeper for pearl shells, they needed to wear breathing equipment that Aboriginal and Torres Strait islander divers often disliked.
                 <br><br>
-                <img src="images/boothelmet.jpg" onclick="openModal();currentSlide(2)" width="80">
-                <img src="images/boatdiver.jpg" onclick="openModal();currentSlide(3)" width="80">
+                <img class="captionthumb" src="images/boothelmet.jpg" onclick="openModal();currentSlide(2)">
+                <img class="captionthumb" src="images/boatdiver.jpg" onclick="openModal();currentSlide(3)">
             </p>
             
         </figcaption>
@@ -360,6 +368,13 @@
                 $('#cap5').css('display', 'none');
             } else {
                 $('#cap5').css('display', 'block');
+            }
+        });
+        $('#svg5a').click(function () {
+            if ($('#cap5a').css('display') == 'block') {
+                $('#cap5a').css('display', 'none');
+            } else {
+                $('#cap5a').css('display', 'block');
             }
         });
         $('#svg6').click(function () {
