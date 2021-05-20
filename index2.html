@@ -21,7 +21,7 @@
         }
 
         h1,
-        p {
+        p, div {
             color: white;
         }
 /*If need to manually hide display of IDs
@@ -33,7 +33,7 @@
             display: none;
         }
 */
-        .imgcap {
+        .imgcap, .explain_valve {
             display: none;
         }
 
@@ -70,12 +70,11 @@
             opacity: 0.3;
             fill: url(#transGradient);
         }
-
         .img-overlay-wrap {
             position: relative;
             display: inline-block;
             margin: auto;
-            width: 80%;
+            width: 90%;
             padding-left: 0.2em;
         }
 
@@ -193,11 +192,13 @@
                         the <a target="_blank" href="https://vwma.org.au/explore/people/277401">Virtual War Museum.</a>
                     </p>
                     <p id="cap2" class="imgcap">This is one of the crew members. What is he wearing?
-                        <br>
+                        <br><br>
                         <img src="images/boothelmet.jpg" onclick="openModal();currentSlide(2)" width="100">
                     </p>
                     <p id="cap2a" class="imgcap">
                         Some of the most successful divers in the Australian pearling industry were Japanese. Many of them came from Wakayama prefecture, an agriculturally poor coastal area south of Osaka.
+                    <br><br>
+                    <img src="images/slqdivers.jpeg" onclick="openModal();currentSlide(5)" width="100">
                     </p>
                 </figcaption>
             </figure>
@@ -222,7 +223,7 @@
                         <!--helmet-->
                         Pearl divers would use German-designed equipment, like this helmet and the boots beside it. How
                         are they different to modern-day diving helmets?
-                        <br>
+                        <br><br>
                         <img src="images/boatdiver.jpg" onclick="openModal();currentSlide(3)" width="50">
                     </p>
                     <p id="cap4" class="imgcap">
@@ -247,7 +248,12 @@
                 </svg>
                 <figcaption>
                     <p id="cap5" class="imgcap">
-                        placeholder!!!!
+                        This diver is adjusting the valve of his helmet. What does the valve control? Why is this important to do before diving?
+                        <br>
+                        <a href="javascript:void(0)" onclick="toggle_vis('explain_valve');">?</a>
+                        <div id="explain_valve">
+                            Valves are used to control the flow of oxygen...
+                        </div>
                     </p>
                 </figcaption>
             </figure>
@@ -257,9 +263,11 @@
                 <!--currentSlide4, not shown publicly-->
                 <img src="images/pearllugger.jpg">
                 <figcaption style="display: block; color: white;">
-                    <p  id="cap6" class="imgcap"></p>
+                    <p  id="cap6" class="imgcap">
+                        <!--empty lol-->
+                    </p>
                     <p>
-                    This diver is adjusting the valve of his helmet. What does the valve control? Why is this important to do?
+                        Pearl luggers like this model of 'Alana' were iconic vessels in the Torres Strait. 
                     </p>
                 </figcaption>
             </figure>
@@ -267,7 +275,7 @@
 <div class="img-overlay-wrap">
     <figure class="theSlides">
         <!--currentSLide5-->
-        <img src="images/slqdivers.jpeg" style="max-height: 80%;">
+        <img src="images/slqdivers.jpeg" style="max-height: 80vh;">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="max-height: 80%" viewbox="0 0 755 1024">
             <a xlink:href="javascript:void(0)"><polygon id="svg6" points="46,375 85,351 98,268 148,256 185,264 199,221 223,218 223,153 251,114 303,114 325,146 325,231 369,144 434,151 445,168 480,140 480,77 530,54 576,83 576,138 640,277 696,280 703,367 742,387 742,491 716,511 723,675 749,744 708,860 672,865 681,919 633,987 552,1024 349,987 349,847 199,668 192,945 120,948 74,948 24,967 46,375" /></a>
         </svg>
@@ -276,8 +284,9 @@
                 These men were all Torres Strait pearl divers. 
                 <br>The Australian pearling industry started in the Torres Strait, where the waters were shallow enough to allow divers to dive by holding their breath.
                 <br> As divers had to go deeper for pearl shells, they needed to wear breathing equipment that Aboriginal and Torres Strait islander divers often disliked.
-                <img src="images/boothelmet.jpg" onclick="openModal();currentSlide(2)" width="100">
-                <img src="images/boatdiver.jpg" onclick="openModal();currentSlide(3)" width="100">
+                <br><br>
+                <img src="images/boothelmet.jpg" onclick="openModal();currentSlide(2)" width="80">
+                <img src="images/boatdiver.jpg" onclick="openModal();currentSlide(3)" width="80">
             </p>
             
         </figcaption>
@@ -362,6 +371,13 @@
         });
     </script>
     <script>
+        function toggle_vis(id) {
+            var e = document.getElementById(id);
+            if (e.style.display == 'block')
+            e.style.display = 'none';
+            else
+            e.style.display = 'block';
+        }
         /*Javascript here because my brain isn't prepared to convert it to jquery.
         opens/closes the lightbox/modal.
         */
