@@ -131,6 +131,10 @@
     </style>
 
 <body>
+    <h1>Prototype Image Gallery</h1>
+    <p>
+        Disclaimer: This is merely demonstrating the bare bones possible functionality of the gallery setup. Aesthetic presentation and formatting is not set in stone!
+    </p>
     <svg height="0" width="0">
         <defs>
             <radialGradient id="transGradient" cx="50%" cy="50%" r="50%">
@@ -156,7 +160,7 @@
         <img src="images/slqdivers.jpeg" onclick="openModal();currentSlide(5)">
     </figure>
     <figure class="imgindex">
-        <img src="images/jpndivers.jpg" onclick="openModal();currentSlide(5)">
+        <img src="images/linocut.jpg" onclick="openModal();currentSlide(6)">
     </figure>
     <!--gallery end-->
     <!--lightbox attempt-->
@@ -257,14 +261,16 @@
                 </svg>
                 <figcaption>
                     <p id="cap5" class="imgcap">
-                        This diver is adjusting the valve of his helmet. What does the valve control? Why is this important to do before diving<a href="javascript:void(0)" onclick="toggle_vis('explain_valve');">?</a>
+                        This diver is adjusting the valve of his helmet. What does the valve control? Why is this important to do before diving<a href="javascript:void(0)" onclick="toggle_vis('cap5a');">?</a>
                        <br><br>
-                        <div id="explain_valve">
+                        <div id="cap5a" class="imgcap">
                            These valves are used to control the flow of air, matching it to the pressure of the water around the diver. As the diver goes deeper underwater, the pressure increases, and more air is needed to match the water pressure. 
                         </div>
                     </p>
-                    <p id="cap5a" class="imgcap">
-                        test
+                    <p id="cap5b" class="imgcap">
+                        Most of the successful divers and crew were Japanese, Timorese and Malays. The few European divers were generally less successful and less well regarded.
+                        <img class="captionthumb" src="images/jpndivers.jpg" onclick="openModal();currentSlide(1)">
+                        <img class="captionthumb" src="images/slqdivers.jpeg" onclick="openModal();currentSlide(5)">
                     </p>
                 </figcaption>
             </figure>
@@ -300,6 +306,40 @@
                 <img class="captionthumb" src="images/boatdiver.jpg" onclick="openModal();currentSlide(3)">
             </p>
             
+        </figcaption>
+    </figure>
+</div>
+<div class="img-overlay-wrap">
+    <figure class="theSlides">
+        <!--currentSLide6-->
+        <img src="images/linocut.jpg" style="width: 40%;">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 40%;" viewbox="0 0 1512 2016">
+            <a xlink:href="javascript:void(0)"><polygon id="svg7"points="746,1119 813,1099 911,1146 1094,1265 1092,1367 880,1367 819,1213 763,1203 746,1119" /></a>
+            <a xlink:href="javascript:void(0)"><polygon id="svg8" points="542,1409 676,1217 819,1213 873,1357 900,1448 829,1504 588,1496 542,1409" /></a>
+            <a xlink:href="javascript:void(0)"><polygon id="svg9" points="631,873 688,857 726,871 791,865 860,894 883,1008 858,1069 749,1104 575,1086 558,966 631,873" /></a>
+            <a xlink:href="javascript:void(0)"><polygon id="svg10"points="615,655 638,630 604,567 631,495 726,445 827,487 839,579 804,632 844,661 810,754 631,739 615,655" /></a>
+        </svg>
+        <figcaption>
+            <p style="color: white;">
+                The Fuji family commissioned this print from TSI artist Rosie Ware in 2016, to be presented to the Australia-Japan Foundation.
+                Once this image is cropped it'll be better. :) 
+            </p>
+            <p id="cap8" class="imgcap">
+                <!--koi-->
+                Koi, Japanese fish. . .  Japanese diver.. connect the dots..  
+            </p>
+            <p id="cap9" class="imgcap">
+                <!--boat-->
+                A sail boat (pearl lugger?)
+            </p>
+            <p id="cap10" class="imgcap">
+                <!--shells-->
+                A pair of pearl shells. (specific type of shell I believe)
+            </p>
+            <p id="cap11" class="imgcap">
+                <!--helmet-->
+                Diver's helmet - to represent the pearl divers.
+            </p>
         </figcaption>
     </figure>
 </div>
@@ -378,10 +418,10 @@
             }
         });
         $('#svg5a').click(function () {
-            if ($('#cap5a').css('display') == 'block') {
-                $('#cap5a').css('display', 'none');
+            if ($('#cap5b').css('display') == 'block') {
+                $('#cap5b').css('display', 'none');
             } else {
-                $('#cap5a').css('display', 'block');
+                $('#cap5b').css('display', 'block');
             }
         });
         $('#svg6').click(function () {
@@ -389,6 +429,35 @@
                 $('#cap7').css('display', 'none');
             } else {
                 $('#cap7').css('display', 'block');
+            }
+        });
+        //lino cut// 
+        $('#svg7').click(function () {
+            if ($('#cap8').css('display') == 'block') {
+                $('#cap8').css('display', 'none');
+            } else {
+                $('#cap8').css('display', 'block');
+            }
+        });
+        $('#svg8').click(function () {
+            if ($('#cap9').css('display') == 'block') {
+                $('#cap9').css('display', 'none');
+            } else {
+                $('#cap9').css('display', 'block');
+            }
+        });
+        $('#svg9').click(function () {
+            if ($('#cap10').css('display') == 'block') {
+                $('#cap10').css('display', 'none');
+            } else {
+                $('#cap10').css('display', 'block');
+            }
+        });
+        $('#svg10').click(function () {
+            if ($('#cap11').css('display') == 'block') {
+                $('#cap11').css('display', 'none');
+            } else {
+                $('#cap11').css('display', 'block');
             }
         });
     </script>
