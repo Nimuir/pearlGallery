@@ -7,8 +7,9 @@
     <!--embedding style for ease of implementation..yeah.. one-page proj-->
     <style>
         body {
-            background-color: black;
+            background-color: white;
             font-family: 'Montserrat', sans-serif;
+            font-size: larger;
             overflow: hidden;
             scrollbar-width: 0;
         }
@@ -22,7 +23,7 @@
 
         h1,
         p, div {
-            color: white;
+            color: black;
         }
 /*If need to manually hide display of IDs
 #cap1,
@@ -103,7 +104,7 @@
             display: none;
             width: 100%;
             height: 100%;
-            background-color: black;
+            background-color: white;
             position: fixed;
             z-index: 1;
             left: 0;
@@ -116,7 +117,7 @@
         }
 
         .closeclick {
-            color: white;
+            color: black;
             position: absolute;
             right: 30px;
             font-size: 35px;
@@ -125,7 +126,7 @@
         }
 
         a {
-            color: rgb(201, 155, 117);
+            color: rgb(204, 128, 67);
             text-decoration: none;
         }
     </style>
@@ -261,10 +262,10 @@
                 </svg>
                 <figcaption>
                     <p id="cap5" class="imgcap">
-                        This diver is adjusting the valve of his helmet. What does the valve control? Why is this important to do before diving<a href="javascript:void(0)" onclick="toggle_vis('cap5a');">?</a>
+                       What is the diver doing<a href="javascript:void(0)" onclick="toggle_vis('cap5a');">?</a>
                        <br><br>
                         <div id="cap5a" class="imgcap">
-                           These valves are used to control the flow of air, matching it to the pressure of the water around the diver. As the diver goes deeper underwater, the pressure increases, and more air is needed to match the water pressure. 
+                           The diver is adjusting the valves on their helemt. These valves are used to control the flow of air, matching it to the pressure of the water around the diver. As the diver goes deeper underwater, the pressure increases, and more air is needed to match the water pressure. 
                         </div>
                     </p>
                     <p id="cap5b" class="imgcap">
@@ -426,6 +427,7 @@
         $('#svg5').click(function () {
             if ($('#cap5').css('display') == 'block') {
                 $('#cap5').css('display', 'none');
+                $('#cap5a').css('display', 'none')
             } else {
                 $('#cap5').css('display', 'block');
             }
