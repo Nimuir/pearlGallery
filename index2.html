@@ -207,7 +207,7 @@
                         <br><br>
                         <img class="captionthumb" src="images/boothelmet.jpg" onclick="openModal();currentSlide(2)">
                     </p>
-                    <p id="cap2a" class="imgcap">
+                    <p id="cap12" class="imgcap">
                         Some of the most successful divers in the Australian pearling industry were Japanese. Many of them came from Wakayama prefecture, an agriculturally poor coastal area south of Osaka.
                     <br><br>
                     <img class="captionthumb" src="images/slqdivers.jpeg" onclick="openModal();currentSlide(5)">
@@ -365,10 +365,12 @@
         sigh
         */
 
-        $('.captionthumb, .imgcap').click(function() {
-            for (i = 1; i < 12; i++) {
+        $('.captionthumb, .closeclick').click(function() {
+            for (i = 1; i < 13; i++) {
                 $('#cap' + i).css('display', 'none');
             }
+            $('#cap5a').css('display', 'none');
+            $('#cap5b').css('display', 'none');
         });
         $('#svg1').click(function () {
             if ($('#cap1').css('display') == 'block') {
@@ -386,24 +388,24 @@
         });
         /*Crewdivers*/
         $('#svg2aa').click(function () {
-            if ($('#cap2a').css('display') == 'block') {
-                $('#cap2a').css('display', 'none');
+            if ($('#cap12').css('display') == 'block') {
+                $('#cap12').css('display', 'none');
             } else {
-                $('#cap2a').css('display', 'block');
+                $('#cap12').css('display', 'block');
             }
         });
         $('#svg2ab').click(function () {
-            if ($('#cap2a').css('display') == 'block') {
-                $('#cap2a').css('display', 'none');
+            if ($('#cap12').css('display') == 'block') {
+                $('#cap12').css('display', 'none');
             } else {
-                $('#cap2a').css('display', 'block');
+                $('#cap12').css('display', 'block');
             }
         });
         $('#svg2ac').click(function () {
-            if ($('#cap2a').css('display') == 'block') {
-                $('#cap2a').css('display', 'none');
+            if ($('#cap12').css('display') == 'block') {
+                $('#cap12').css('display', 'none');
             } else {
-                $('#cap2a').css('display', 'block');
+                $('#cap12').css('display', 'block');
             }
         });
         /*End crewdivers, next img*/
